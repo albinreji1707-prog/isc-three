@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISC Abu Dhabi | India Social & Cultural Centre</title>
+
+    <!-- Meta tags for SEO -->
+    <meta name="description"
+        content="The India Social and Cultural Centre (ISC) in Abu Dhabi is a vibrant hub for the Indian community, offering world-class sports, dining, cultural events, and community activities since 1967.">
+    <meta name="keywords"
+        content="ISC Abu Dhabi, Indian Social Cultural Centre, India Club Abu Dhabi, Indian Community Abu Dhabi, sports club, cultural events, facility booking, membership">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/facility_sports.png"> <!-- Fallback icon -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Logo Section -->
+            <a href="#" class="logo-container" id="logo-link">
+                <img src="assets/logo.png" alt="India Social & Cultural Centre Logo" class="logo-img-main">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#facilities" class="nav-link">Facilities</a></li>
+                    <li><a href="#membership" class="nav-link">Membership</a></li>
+                    <li><a href="#events" class="nav-link">News & Events</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Nav Actions -->
+            <div class="nav-actions">
+                <a href="#facilities" class="btn btn-outline" id="btn-facility-booking">Facility Booking</a>
+                <a href="#membership" class="btn btn-solid" id="btn-isc-connect">ISC Connect</a>
+                <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-header">
+            <span class="drawer-title">MENU</span>
+            <button class="drawer-close" id="drawer-close" aria-label="Close Menu">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <ul class="drawer-links">
+            <li><a href="#about" class="drawer-link">About</a></li>
+            <li><a href="#facilities" class="drawer-link">Facilities</a></li>
+            <li><a href="#membership" class="drawer-link">Membership</a></li>
+            <li><a href="#events" class="drawer-link">News & Events</a></li>
+            <li><a href="#contact" class="drawer-link">Contact</a></li>
+            <li class="drawer-divider"></li>
+            <li><a href="#facilities" class="btn btn-outline w-full text-center">Facility Booking</a></li>
+            <li><a href="#membership" class="btn btn-solid w-full text-center mt-2">ISC Connect</a></li>
+        </ul>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Mockup-Exact Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <!-- Left text panel -->
+                <div class="hero-left">
+                    <div class="hero-left-bg"></div>
+                    <div class="hero-text-content">
+                        <div class="hero-badge">
+                            <span class="badge-text">INDIA SOCIAL & CULTURAL CENTRE</span>
+                            <span class="badge-underline"></span>
+                        </div>
+                        <h1 class="hero-title">
+                            The Heart of Abu Dhabi.<br>
+                            A Vibrant Hub for<br>
+                            Indian Culture.
+                        </h1>
+                        <p class="hero-desc">
+                            Celebrating culture, sport, learning and community since 1967.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#membership" class="btn btn-solid btn-lg" id="hero-btn-join">Join ISC</a>
+                            <a href="#events" class="btn btn-outline btn-lg" id="hero-btn-events">Explore Events</a>
+                        </div>
+                    </div>
+
+                    <!-- Left panel concentric design decoration -->
+                    <div class="decor-circles">
+                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#E2E8F0" stroke-width="1.5"
+                                stroke-dasharray="4 4" />
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#E2E8F0" stroke-width="1.5" />
+                            <circle cx="100" cy="100" r="50" fill="none" stroke="#CBD5E1" stroke-width="1.5"
+                                stroke-dasharray="8 4" />
+                            <circle cx="100" cy="100" r="30" fill="none" stroke="#CBD5E1" stroke-width="1.5" />
+                        </svg>
+                    </div>
+
+                </div>
+
+                <!-- Right image panel with slanted cut -->
+                <div class="hero-right">
+                    <div class="hero-image-wrapper">
+                        <img src="assets/hero_people.png"
+                            alt="Happy group of Indian community members socializing at ISC Abu Dhabi" class="hero-img">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Cards (Overlapping the hero section bottom) -->
+            <div class="hero-floating-cards">
+                <div class="floating-cards-container">
+                    <!-- Card 1: Upcoming Events -->
+                    <a href="#events" class="floating-card" id="card-upcoming-events">
+                        <div class="card-icon-wrapper event-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card-svg-icon">
+                                <rect x="3" y="4" width="18" height="18" rx="2" fill="none" stroke="#1A365D"
+                                    stroke-width="2" />
+                                <line x1="3" y1="9" x2="21" y2="9" stroke="#1A365D" stroke-width="2" />
+                                <line x1="8" y1="2" x2="8" y2="6" stroke="#1A365D" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <line x1="16" y1="2" x2="16" y2="6" stroke="#1A365D" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <text x="12" y="18" font-family="'Outfit', sans-serif" font-size="9" font-weight="700"
+                                    fill="#1A365D" text-anchor="middle">24</text>
+                            </svg>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-title-text">Upcoming<br>Events</span>
+                        </div>
+                        <div class="card-arrow red-arrow">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Facilities -->
+                    <a href="#facilities" class="floating-card" id="card-facilities">
+                        <div class="card-icon-wrapper facility-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card-svg-icon">
+                                <path
+                                    d="M4,10 L4,20 L6,20 L6,10 Z M10,10 L10,20 L12,20 L12,10 Z M16,10 L16,20 L18,20 L18,10 Z"
+                                    fill="#D97706" />
+                                <path d="M2,21 L22,21" stroke="#D97706" stroke-width="2" stroke-linecap="round" />
+                                <path d="M12,2 L2,8 L2,10 L22,10 L22,8 Z" fill="none" stroke="#D97706" stroke-width="2"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-title-text">25+<br>Facilities</span>
+                        </div>
+                        <div class="card-arrow yellow-arrow">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Member Access -->
+                    <a href="#membership" class="floating-card" id="card-member-access">
+                        <div class="card-icon-wrapper member-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="card-svg-icon">
+                                <circle cx="12" cy="8" r="4" fill="none" stroke="#E53E3E" stroke-width="2" />
+                                <path d="M4,20 C4,16 8,15 12,15 C16,15 20,16 20,20" fill="none" stroke="#E53E3E"
+                                    stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-title-text">Member<br>Access</span>
+                        </div>
+                        <div class="card-arrow red-arrow">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Our Heritage (About Us) -->
+        <section id="about" class="section-about">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">OUR HERITAGE</span>
+                    <h2 class="section-title">Home Away From Home Since 1967</h2>
+                    <p class="section-subtitle">A historical legacy built on community, culture, and deep friendship
+                        between India and the UAE.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-content-left">
+                        <h3>India Social & Cultural Centre (ISC), Abu Dhabi</h3>
+                        <p>
+                            India Social Cultural Centre (ISC), Abu Dhabi, is the premier socio-cultural organisation
+                            and the apex body of the registered Indian associations in the capital city of Abu Dhabi.
+                            The genesis of ISC is traced to the Unity Club that took shape in 1967 from the shared
+                            vision of pioneering Indians to create a centre for social and cultural activities.
+                        </p>
+                        <p>
+                            With the benevolence and magnanimity of <strong>His Highness Sheikh Zayed Bin Sultan Al
+                                Nahyan</strong>, the father of the U.A.E., the Unity Club transformed into India Social
+                            and Cultural Centre.
+                        </p>
+                        <p>
+                            Today, ISC stands as a majestic, multi-story structure in the heart of Abu Dhabi, housing
+                            world-class facilities and serving as the primary hub for a community of over 10,000 members
+                            and their families.
+                        </p>
+                        <a href="#membership" class="btn btn-solid mt-4">Discover Membership</a>
+                    </div>
+
+                    <div class="about-stats-right">
+                        <div class="stat-card">
+                            <div class="stat-number"><span class="count-num" data-target="1967">0</span></div>
+                            <div class="stat-label">Year Established</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number"><span class="count-num" data-target="10">0</span>k+</div>
+                            <div class="stat-label">Active Community Members</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number"><span class="count-num" data-target="25">0</span>+</div>
+                            <div class="stat-label">Premium Sports & Social Facilities</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number"><span class="count-num" data-target="100">0</span>+</div>
+                            <div class="stat-label">Annual Cultural & Sports Events</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: World-Class Facilities -->
+        <section id="facilities" class="section-facilities">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">PREMIUM AMENITIES</span>
+                    <h2 class="section-title">Everything You Need In One Place</h2>
+                    <p class="section-subtitle">Experience international standard sports grounds, exquisite dining
+                        rooms, and high-tech auditoriums designed for our members.</p>
+                </div>
+
+                <div class="facilities-bento-grid">
+                    <!-- Facility Card 1: Sports & Recreation -->
+                    <div class="facility-bento-card card-sports">
+                        <div class="facility-bg-image" style="background-image: url('assets/facility_sports.png');"></div>
+                        <div class="facility-overlay"></div>
+                        <span class="facility-badge">Sports & Fitness</span>
+                        <div class="facility-glass-content">
+                            <div class="facility-header-row">
+                                <h3>Sports & Recreation</h3>
+                            </div>
+                            <div class="facility-expanded-body">
+                                <p>Equipped with 5 professional indoor badminton courts, international-standard squash courts, a high-tech gym, and table tennis rooms.</p>
+                                <ul class="facility-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> BWF Approved Badminton Floors</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Squash & Table Tennis Arenas</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Certified Coaches & Trainers</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-solid btn-sm mt-3 w-full text-center">Book Sports Facility</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility Card 2: Exquisite Dining -->
+                    <div class="facility-bento-card card-dining">
+                        <div class="facility-bg-image" style="background-image: url('assets/facility_dining.png');"></div>
+                        <div class="facility-overlay"></div>
+                        <span class="facility-badge">Gastronomy</span>
+                        <div class="facility-glass-content">
+                            <div class="facility-header-row">
+                                <h3>Exquisite Dining</h3>
+                            </div>
+                            <div class="facility-expanded-body">
+                                <p>Featuring a multi-cuisine family restaurant, a cozy sports lounge, and rich catering facilities offering traditional Indian and international delicacies.</p>
+                                <ul class="facility-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> Multi-Cuisine Family Restaurant</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> VIP Dining & Sports Lounge</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Party Catering & Outdoor Buffets</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-solid btn-sm mt-3 w-full text-center">Reserve Table</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility Card 3: Event Venues & Halls -->
+                    <div class="facility-bento-card card-hall">
+                        <div class="facility-bg-image" style="background-image: url('assets/facility_hall.png');"></div>
+                        <div class="facility-overlay"></div>
+                        <span class="facility-badge">Gatherings</span>
+                        <div class="facility-glass-content">
+                            <div class="facility-header-row">
+                                <h3>Event Venues & Halls</h3>
+                            </div>
+                            <div class="facility-expanded-body">
+                                <p>A grand main auditorium with seating for over 800 guests, equipped with high-end audio-visual systems, alongside premium mini-conference halls.</p>
+                                <ul class="facility-features">
+                                    <li><i class="fa-solid fa-circle-check"></i> 800+ Seater Main Auditorium</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> Multi-purpose Banquet Halls</li>
+                                    <li><i class="fa-solid fa-circle-check"></i> High-Tech Sound & Projection Systems</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-solid btn-sm mt-3 w-full text-center">Inquire For Booking</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility Card 4: Literary & Leisure Hub -->
+                    <div class="facility-bento-card card-leisure">
+                        <div class="facility-bg-image" style="background-image: url('assets/facility_leisure.png');"></div>
+                        <div class="facility-overlay"></div>
+                        <span class="facility-badge bg-gold" style="color: var(--slate-900) !important;">Leisure</span>
+                        <div class="facility-glass-content">
+                            <div class="facility-header-row">
+                                <h3>Literary & Leisure Hub</h3>
+                            </div>
+                            <div class="facility-expanded-body">
+                                <p>Discover our peaceful library boasting over 10,000 books, child-friendly youth activity spaces, and card/billiards recreation rooms.</p>
+                                <ul class="facility-features">
+                                    <li><i class="fa-solid fa-circle-check" style="color: var(--isc-red);"></i> Library & Silent Reading Room</li>
+                                    <li><i class="fa-solid fa-circle-check" style="color: var(--isc-red);"></i> Youth Recreation & Activity Room</li>
+                                    <li><i class="fa-solid fa-circle-check" style="color: var(--isc-red);"></i> Cards, Chess, & Billiards Lounge</li>
+                                </ul>
+                                <a href="#contact" class="btn btn-gold-solid btn-sm mt-3 w-full text-center">Explore Leisure Area</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Membership Plans -->
+        <section id="membership" class="section-membership">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">BECOME A MEMBER</span>
+                    <h2 class="section-title">Membership Tiers & Categories</h2>
+                    <p class="section-subtitle">Join the largest social club in Abu Dhabi and enjoy exclusive discounts,
+                        facility bookings, and premium community networks.</p>
+                </div>
+
+                <div class="membership-grid">
+                    <!-- Tier 1: Life Member -->
+                    <div class="membership-card">
+                        <div class="card-header">
+                            <h3>Life Membership</h3>
+                            <div class="membership-price">AED 15,000<span>/ one-time</span></div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-intro">Permanent membership for individuals seeking a lifelong connection and
+                                ultimate voting rights at ISC.</p>
+                            <ul class="benefit-list">
+                                <li><i class="fa-solid fa-check"></i> Lifetime access to all club facilities</li>
+                                <li><i class="fa-solid fa-check"></i> Voting rights in general elections</li>
+                                <li><i class="fa-solid fa-check"></i> Access for spouse & children under 21</li>
+                                <li><i class="fa-solid fa-check"></i> Exclusive discounts on restaurants & halls</li>
+                                <li><i class="fa-solid fa-check"></i> Reciprocal club access globally</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 2: Ordinary Member (Featured/Recommended) -->
+                    <div class="membership-card featured">
+                        <div class="featured-badge">MOST POPULAR</div>
+                        <div class="card-header">
+                            <h3>Ordinary Membership</h3>
+                            <div class="membership-price">AED 2,500<span>/ annually</span></div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-intro">Standard annual membership perfect for resident Indian expats and
+                                families in Abu Dhabi.</p>
+                            <ul class="benefit-list">
+                                <li><i class="fa-solid fa-check"></i> Full access to sports & dining areas</li>
+                                <li><i class="fa-solid fa-check"></i> Invites to all major cultural festivals</li>
+                                <li><i class="fa-solid fa-check"></i> Family package (spouse + children)</li>
+                                <li><i class="fa-solid fa-check"></i> Member rates for guest entries</li>
+                                <li><i class="fa-solid fa-check"></i> Standard voting rights (post 2 years)</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-solid w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Tier 3: Sports/Associate Member -->
+                    <div class="membership-card">
+                        <div class="card-header">
+                            <h3>Sports Membership</h3>
+                            <div class="membership-price">AED 1,500<span>/ annually</span></div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-intro">Tailored for fitness and sports enthusiasts looking to exclusively use
+                                sports courts and training systems.</p>
+                            <ul class="benefit-list">
+                                <li><i class="fa-solid fa-check"></i> Access to all sports facilities (court bookings)
+                                </li>
+                                <li><i class="fa-solid fa-check"></i> Special member coaching rates</li>
+                                <li><i class="fa-solid fa-check"></i> Locker & shower room access</li>
+                                <li><i class="fa-solid fa-check"></i> Dining discount (10%)</li>
+                                <li><i class="fa-solid fa-circle-xmark text-muted"></i> No general voting rights</li>
+                            </ul>
+                            <a href="#contact" class="btn btn-outline w-full text-center">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guest & Affiliate Policy Alert -->
+                <div class="membership-note-box">
+                    <div class="note-icon">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+                    <div class="note-content">
+                        <h4>Guest Policy & Reciprocal Club Access</h4>
+                        <p>Members can invite up to 4 guests per day subject to nominal entry fees. Additionally, ISC
+                            maintains reciprocal affiliations with over 50 leading clubs across India, GCC, and
+                            globally, offering you a familiar haven wherever you travel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Upcoming Events -->
+        <section id="events" class="section-events">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">WHAT'S HAPPENING</span>
+                    <h2 class="section-title">Upcoming Cultural & Sports Events</h2>
+                    <p class="section-subtitle">Join us for our upcoming community tournaments, vibrant cultural
+                        celebrations, and intellectual forums.</p>
+                </div>
+
+                <div class="events-grid">
+                    <!-- Event 1 -->
+                    <div class="event-card">
+                        <div class="event-image">
+                            <div class="event-gradient-overlay"></div>
+                            <span class="event-tag-badge sports">Sports</span>
+                            <div class="event-date">
+                                <span class="day">28</span>
+                                <span class="month">AUG</span>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <span class="event-location"><i class="fa-solid fa-location-dot"></i> ISC Badminton
+                                Arena</span>
+                            <h3>ISC Open Badminton Tournament 2026</h3>
+                            <p>Watch top local and regional badminton stars battle it out in our annual championship.
+                                Match registrations now open.</p>
+                            <div class="event-footer">
+                                <span class="event-time"><i class="fa-regular fa-clock"></i> 05:00 PM onwards</span>
+                                <a href="#contact" class="event-link">Register <i
+                                        class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 2 -->
+                    <div class="event-card">
+                        <div class="event-image event-img-diwali">
+                            <div class="event-gradient-overlay"></div>
+                            <span class="event-tag-badge cultural">Cultural</span>
+                            <div class="event-date">
+                                <span class="day">15</span>
+                                <span class="month">OCT</span>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <span class="event-location"><i class="fa-solid fa-location-dot"></i> Main Auditorium</span>
+                            <h3>Grand Diwali Gala & Musical Night</h3>
+                            <p>Celebrate the festival of lights with delicious traditional food, fireworks display, and
+                                live musical performance by Bollywood singers.</p>
+                            <div class="event-footer">
+                                <span class="event-time"><i class="fa-regular fa-clock"></i> 07:00 PM onwards</span>
+                                <a href="#contact" class="event-link">Book Passes <i
+                                        class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event 3 -->
+                    <div class="event-card">
+                        <div class="event-image event-img-debate">
+                            <div class="event-gradient-overlay"></div>
+                            <span class="event-tag-badge literary">Literary</span>
+                            <div class="event-date">
+                                <span class="day">05</span>
+                                <span class="month">SEP</span>
+                            </div>
+                        </div>
+                        <div class="event-info">
+                            <span class="event-location"><i class="fa-solid fa-location-dot"></i> Conference
+                                Lounge</span>
+                            <h3>Annual Youth Debate & Public Speaking</h3>
+                            <p>A platform for young minds to express, discuss, and deliberate on modern socio-economic
+                                developments. Free entry for members.</p>
+                            <div class="event-footer">
+                                <span class="event-time"><i class="fa-regular fa-clock"></i> 04:00 PM - 07:00 PM</span>
+                                <a href="#contact" class="event-link">Join Discussion <i
+                                        class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <a href="#" class="btn btn-outline">View Event Calendar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Media Gallery & Contact Inquiry -->
+        <section id="contact" class="section-contact">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">GET IN TOUCH</span>
+                    <h2 class="section-title">Connect & Experience ISC</h2>
+                    <p class="section-subtitle">Reach out for bookings, membership applications, or coordinate a tour of
+                        our spectacular facilities.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Left Column: Contact details & Timings -->
+                    <div class="contact-details-column">
+                        <div class="contact-card">
+                            <h3>India Social & Cultural Centre</h3>
+                            <p class="contact-description">Located in the capital's central hub, easily accessible from
+                                all points of Abu Dhabi.</p>
+
+                            <ul class="contact-info-list">
+                                <li>
+                                    <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                    <div class="info-text">
+                                        <strong>Address</strong>
+                                        <span>Mina Road, Near Abu Dhabi Port Area, P.O. Box 2800, Abu Dhabi, UAE</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                                    <div class="info-text">
+                                        <strong>Phone</strong>
+                                        <span>+971 2 673 0066</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                    <div class="info-text">
+                                        <strong>Email</strong>
+                                        <span>info@iscabudhabi.com</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                                    <div class="info-text">
+                                        <strong>Club Timings</strong>
+                                        <span>Daily: 10:00 AM - 11:00 PM</span>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <!-- Stylized Vector Map representation to replace plain Google Maps -->
+                            <div class="stylized-map">
+                                <div class="map-bg-pattern"></div>
+                                <div class="map-marker">
+                                    <div class="pulse-ring"></div>
+                                    <i class="fa-solid fa-location-pin"></i>
+                                </div>
+                                <span class="map-label">ISC Abu Dhabi, Mina Road</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Inquiry Form -->
+                    <div class="contact-form-column">
+                        <div class="form-container">
+                            <h3>Send an Inquiry</h3>
+                            <p>Fill out the form below and our relations team will contact you within 24 hours.</p>
+
+                            <form id="inquiry-form" class="inquiry-form">
+                                <div class="form-group">
+                                    <label for="form-name">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="form-name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="form-email">Email Address <span class="required">*</span></label>
+                                        <input type="email" id="form-email" placeholder="john@example.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="form-phone">Phone Number <span class="required">*</span></label>
+                                        <input type="tel" id="form-phone" placeholder="+971 50 123 4567" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-subject">Subject <span class="required">*</span></label>
+                                    <select id="form-subject" required>
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="membership">Membership Application</option>
+                                        <option value="sports">Sports Court Booking</option>
+                                        <option value="events">Banquet / Hall Hire</option>
+                                        <option value="general">General Feedback</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-message">Message <span class="required">*</span></label>
+                                    <textarea id="form-message" rows="4" placeholder="How can we assist you today?"
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-solid btn-lg w-full" id="form-submit-btn">Send
+                                    Message</button>
+                            </form>
+                            <div class="form-success-msg" id="form-success-msg">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <h4>Thank You!</h4>
+                                <p>Your message has been sent successfully. Our team will get back to you shortly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#" class="logo-container light-logo">
+                        <img src="assets/logo.png" alt="India Social & Cultural Centre Logo" class="logo-img-footer">
+                    </a>
+                    <p class="footer-about-text">
+                        India Social & Cultural Centre is the apex community hub in Abu Dhabi, fostering relations and
+                        offering cultural, sports, and social growth since 1967.
+                    </p>
+                    <div class="footer-social-icons">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i
+                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Club</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#membership">Membership Details</a></li>
+                        <li><a href="#events">News & Events</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links-column">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#membership">Membership Application</a></li>
+                        <li><a href="#membership">Guest Policy</a></li>
+                        <li><a href="#facilities">Sports Bookings</a></li>
+                        <li><a href="#about">Management Committee</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <div class="footer-bottom">
+                <p class="copyright-text">Copyrights © 2026. India Social & Cultural Centre (ISC). All Rights Reserved.
+                </p>
+                <p class="developer-text">Designed with premium aesthetics by Antigravity</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript logic for interactive elements -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // Header Scroll class addition (adds shadow/bg when scrolled)
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // Scroll Progress indicator
+            const progressBar = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                if (progressBar) {
+                    progressBar.style.width = scrolled + '%';
+                }
+            });
+
+            // Mobile Nav Drawer Toggle
+            const toggleBtn = document.getElementById('mobile-nav-toggle');
+            const closeBtn = document.getElementById('drawer-close');
+            const drawer = document.getElementById('mobile-drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const drawerLinks = document.querySelectorAll('.drawer-link');
+
+            function openDrawer() {
+                drawer.classList.add('active');
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Stop scroll
+            }
+
+            function closeDrawer() {
+                drawer.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scroll
+            }
+
+            toggleBtn.addEventListener('click', openDrawer);
+            closeBtn.addEventListener('click', closeDrawer);
+            overlay.addEventListener('click', closeDrawer);
+
+            drawerLinks.forEach(link => {
+                link.addEventListener('click', closeDrawer);
+            });
+
+            // Inquiry Form Submission animation (Triggers Premium Success Modal)
+            const inquiryForm = document.getElementById('inquiry-form');
+            const contactSuccessModal = document.getElementById('contact-success-modal');
+
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    if (inquiryForm.checkValidity()) {
+                        // Open success modal and reset form
+                        contactSuccessModal.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Lock scrolling
+                        inquiryForm.reset();
+                    }
+                });
+            }
+
+            // Smooth scrolling to sections
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offset = 80; // height of header
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Count-up animation for stats numbers using IntersectionObserver
+            const countElements = document.querySelectorAll('.count-num');
+
+            function startCounter(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        const targetVal = parseInt(target.getAttribute('data-target'));
+                        let startVal = 0;
+
+                        // For large values, start counting closer to target so it doesn't take too long
+                        if (targetVal > 1000) {
+                            startVal = targetVal - 100;
+                        }
+
+                        const duration = 1200; // total animation duration in ms (1.2 seconds)
+                        const steps = 40; // number of steps in animation
+                        const stepTime = duration / steps;
+                        const increment = (targetVal - startVal) / steps;
+
+                        let currentStep = 0;
+
+                        const updateCount = () => {
+                            currentStep++;
+                            const currentVal = Math.round(startVal + (increment * currentStep));
+                            if (currentStep < steps) {
+                                target.innerText = currentVal;
+                                setTimeout(updateCount, stepTime);
+                            } else {
+                                target.innerText = targetVal;
+                            }
+                        };
+
+                        updateCount();
+                        observer.unobserve(target); // Only animate once
+                    }
+                });
+            }
+
+            const counterObserver = new IntersectionObserver(startCounter, {
+                threshold: 0.2
+            });
+
+            countElements.forEach(el => counterObserver.observe(el));
+
+            // Back to Top Button visibility & scroll logic
+            const backToTopBtn = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Autoscroll for Floating Cards on Mobile Viewports
+            const cardsContainer = document.querySelector('.floating-cards-container');
+            const cards = document.querySelectorAll('.floating-card');
+            let cardIndex = 0;
+            let autoscrollInterval = null;
+            let userInteracted = false;
+            let resumeTimeout = null;
+
+            function getScrollPosition(index) {
+                if (index === 0) return 0;
+                const card = cards[index];
+                return card.offsetLeft - 24; // Align card left offset subtracting container left padding
+            }
+
+            function startAutoscroll() {
+                if (autoscrollInterval) clearInterval(autoscrollInterval);
+                autoscrollInterval = setInterval(() => {
+                    if (window.innerWidth > 992) return; // Only run on mobile where swiper grid is active
+                    if (userInteracted) return;
+
+                    cardIndex = (cardIndex + 1) % cards.length;
+                    cardsContainer.scrollTo({
+                        left: getScrollPosition(cardIndex),
+                        behavior: 'smooth'
+                    });
+                }, 3500); // Shift every 3.5 seconds
+            }
+
+            // Pause autoscroll on user touch start
+            cardsContainer.addEventListener('touchstart', () => {
+                userInteracted = true;
+                if (resumeTimeout) clearTimeout(resumeTimeout);
+            }, { passive: true });
+
+            // Resume autoscroll 8 seconds after touch ends
+            cardsContainer.addEventListener('touchend', () => {
+                resumeTimeout = setTimeout(() => {
+                    userInteracted = false;
+                }, 8000);
+            }, { passive: true });
+
+            startAutoscroll();
+
+            // ==========================================================================
+            // INTERACTIVE BOOKING MODAL & SUCCESS MODAL HANDLERS
+            // ==========================================================================
+            const bookingModal = document.getElementById('booking-modal');
+            const closeBookingModalBtn = document.getElementById('close-booking-modal');
+            const bookingSteps = document.querySelectorAll('.booking-step');
+            const stepDots = document.querySelectorAll('.step-dot');
+            const optionCards = document.querySelectorAll('.booking-option-card');
+            const timeSlotBtns = document.querySelectorAll('.time-slot-btn');
+            
+            // Buttons navigation
+            const btnGotoStep2 = document.getElementById('btn-goto-step2');
+            const btnGotoStep3 = document.getElementById('btn-goto-step3');
+            const btnBackStep1 = document.getElementById('btn-back-step1');
+            const btnBackStep2 = document.getElementById('btn-back-step2');
+            const btnCloseSuccess = document.getElementById('btn-close-success');
+            
+            // Booking state values
+            let selectedCategory = '';
+            let selectedDate = '';
+            let selectedTime = '';
+            
+            // Open modal function
+            function openBookingModal(preselectedCategory = '') {
+                bookingModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Disable page scrolling
+                
+                if (preselectedCategory) {
+                    selectedCategory = preselectedCategory;
+                    // Auto select the card in UI
+                    optionCards.forEach(card => {
+                        if (card.getAttribute('data-category') === preselectedCategory) {
+                            card.classList.add('selected');
+                        } else {
+                            card.classList.remove('selected');
+                        }
+                    });
+                    btnGotoStep2.removeAttribute('disabled');
+                    // Skip to step 2 for immediate booking selection
+                    goToStep(2);
+                } else {
+                    // Reset to Step 1
+                    goToStep(1);
+                    selectedCategory = '';
+                    optionCards.forEach(card => card.classList.remove('selected'));
+                    btnGotoStep2.setAttribute('disabled', 'true');
+                }
+            }
+            
+            // Close modal function
+            function closeBookingModal() {
+                bookingModal.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable page scrolling
+                resetBookingForm();
+            }
+            
+            // Switch steps
+            function goToStep(stepNum) {
+                // Hide all steps
+                bookingSteps.forEach(step => step.classList.remove('active'));
+                
+                // Show requested step
+                if (stepNum === 4 || stepNum === 'success') {
+                    document.getElementById('booking-step-success').classList.add('active');
+                } else {
+                    document.getElementById(`booking-step-${stepNum}`).classList.add('active');
+                }
+                
+                // Update indicator dots
+                stepDots.forEach(dot => {
+                    const dotStep = parseInt(dot.getAttribute('data-step'));
+                    if (dotStep <= stepNum) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Reset state
+            function resetBookingForm() {
+                selectedCategory = '';
+                selectedDate = '';
+                selectedTime = '';
+                document.getElementById('booking-date').value = '';
+                timeSlotBtns.forEach(btn => btn.classList.remove('selected'));
+                btnGotoStep2.setAttribute('disabled', 'true');
+                btnGotoStep3.setAttribute('disabled', 'true');
+                document.getElementById('booking-form').reset();
+            }
+            
+            // Attach event listeners to close trigger
+            closeBookingModalBtn.addEventListener('click', closeBookingModal);
+            bookingModal.addEventListener('click', (e) => {
+                if (e.target === bookingModal) closeBookingModal();
+            });
+            
+            // Step 1 Option Cards Event
+            optionCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    optionCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    selectedCategory = card.getAttribute('data-category');
+                    btnGotoStep2.removeAttribute('disabled');
+                });
+            });
+            
+            // Step 2 Inputs Event
+            const dateInput = document.getElementById('booking-date');
+            
+            // Set min date to today
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+            
+            dateInput.addEventListener('change', (e) => {
+                selectedDate = e.target.value;
+                checkStep2Validity();
+            });
+            
+            timeSlotBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    timeSlotBtns.forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    selectedTime = btn.getAttribute('data-time');
+                    checkStep2Validity();
+                });
+            });
+            
+            function checkStep2Validity() {
+                if (selectedDate && selectedTime) {
+                    btnGotoStep3.removeAttribute('disabled');
+                } else {
+                    btnGotoStep3.setAttribute('disabled', 'true');
+                }
+            }
+            
+            // Step Navigation Events
+            btnGotoStep2.addEventListener('click', () => goToStep(2));
+            btnGotoStep3.addEventListener('click', () => {
+                // Update summary box
+                const categoryNames = {
+                    sports: 'Sports & Fitness Arena',
+                    dining: 'Exquisite Dining & VIP Lounge',
+                    hall: 'Event Venues & Auditoriums',
+                    leisure: 'Literary & Leisure Hub'
+                };
+                
+                document.getElementById('summary-category').innerText = categoryNames[selectedCategory] || selectedCategory;
+                
+                // Format Date
+                const dateObj = new Date(selectedDate);
+                const options = { day: 'numeric', month: 'short', year: 'numeric' };
+                const formattedDate = dateObj.toLocaleDateString('en-US', options);
+                
+                document.getElementById('summary-datetime').innerText = `${formattedDate} at ${selectedTime}`;
+                goToStep(3);
+            });
+            
+            btnBackStep1.addEventListener('click', () => goToStep(1));
+            btnBackStep2.addEventListener('click', () => goToStep(2));
+            btnCloseSuccess.addEventListener('click', closeBookingModal);
+            
+            // Step 3 Form Submit Event
+            const bookingForm = document.getElementById('booking-form');
+            bookingForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('booking-name').value;
+                const email = document.getElementById('booking-email').value;
+                const phone = document.getElementById('booking-phone').value;
+                
+                // Generate Ticket ID
+                const ticketId = 'ISC-' + Math.floor(100000 + Math.random() * 900000);
+                
+                // Update Success Ticket
+                document.getElementById('ticket-name').innerText = name;
+                document.getElementById('ticket-id').innerText = ticketId;
+                
+                const categoryNames = {
+                    sports: 'Sports & Fitness Arena',
+                    dining: 'Exquisite Dining & Lounge',
+                    hall: 'Auditorium & Banquet Hall',
+                    leisure: 'Literary & Leisure Hub'
+                };
+                document.getElementById('ticket-category').innerText = categoryNames[selectedCategory] || selectedCategory;
+                
+                const dateObj = new Date(selectedDate);
+                const options = { day: 'numeric', month: 'short', year: 'numeric' };
+                const formattedDate = dateObj.toLocaleDateString('en-US', options);
+                document.getElementById('ticket-datetime').innerText = `${formattedDate}, ${selectedTime}`;
+                
+                goToStep('success');
+            });
+            
+            // Bind triggers from headers and buttons
+            const facilityBookingLink = document.getElementById('btn-facility-booking');
+            if (facilityBookingLink) {
+                facilityBookingLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openBookingModal();
+                });
+            }
+            
+            // Mobile Drawer link trigger for booking
+            const drawerBookingLink = document.querySelector('.mobile-drawer a[href="#facilities"]');
+            if (drawerBookingLink) {
+                drawerBookingLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    closeDrawer();
+                    openBookingModal();
+                });
+            }
+            
+            // Bind facilities section category booking buttons
+            const facilitySportsBtn = document.querySelector('.card-sports .btn');
+            if (facilitySportsBtn) {
+                facilitySportsBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openBookingModal('sports');
+                });
+            }
+            
+            const facilityDiningBtn = document.querySelector('.card-dining .btn');
+            if (facilityDiningBtn) {
+                facilityDiningBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openBookingModal('dining');
+                });
+            }
+            
+            const facilityHallBtn = document.querySelector('.card-hall .btn');
+            if (facilityHallBtn) {
+                facilityHallBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openBookingModal('hall');
+                });
+            }
+            
+            const facilityLeisureBtn = document.querySelector('.card-leisure .btn');
+            if (facilityLeisureBtn) {
+                facilityLeisureBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openBookingModal('leisure');
+                });
+            }
+
+            // Contact Success Modal Handler
+            const closeSuccessModalBtn = document.getElementById('close-success-modal');
+            const closeContactSuccessBtn = document.getElementById('btn-close-contact-success');
+            
+            function closeContactSuccessModal() {
+                contactSuccessModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeContactSuccessModal);
+            if (closeContactSuccessBtn) closeContactSuccessBtn.addEventListener('click', closeContactSuccessModal);
+            if (contactSuccessModal) {
+                contactSuccessModal.addEventListener('click', (e) => {
+                    if (e.target === contactSuccessModal) closeContactSuccessModal();
+                });
+            }
+
+        });
+    </script>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- SVG Clip Path definitions for curved hero background -->
+    <svg width="0" height="0" style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+        <defs>
+            <clipPath id="hero-clip" clipPathUnits="objectBoundingBox">
+                <path d="M 0,0 L 1,0 C 0.90,0.25 0.76,0.75 0.70,1 L 0,1 Z" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <!-- Interactive Facility Booking Modal -->
+    <div class="booking-modal-overlay" id="booking-modal">
+        <div class="booking-modal-card">
+            <!-- Close Button -->
+            <button class="booking-modal-close" id="close-booking-modal" aria-label="Close Booking Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="booking-modal-header">
+                <h2>Reserve Amenities</h2>
+                <p>Configure your session at ISC Abu Dhabi</p>
+                <div class="booking-steps-indicator">
+                    <span class="step-dot active" data-step="1">1</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot" data-step="2">2</span>
+                    <span class="step-line"></span>
+                    <span class="step-dot" data-step="3">3</span>
+                </div>
+            </div>
+
+            <!-- Modal Body (Steps) -->
+            <div class="booking-modal-body">
+                <!-- Step 1: Select Facility -->
+                <div class="booking-step active" id="booking-step-1">
+                    <h3>Select Facility Category</h3>
+                    <div class="booking-options-grid">
+                        <div class="booking-option-card" data-category="sports">
+                            <div class="option-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+                            <h4>Sports & Fitness</h4>
+                            <p>Badminton, Squash, Gym</p>
+                        </div>
+                        <div class="booking-option-card" data-category="dining">
+                            <div class="option-icon"><i class="fa-solid fa-utensils"></i></div>
+                            <h4>Exquisite Dining</h4>
+                            <p>Family Restaurant, Lounge</p>
+                        </div>
+                        <div class="booking-option-card" data-category="hall">
+                            <div class="option-icon"><i class="fa-solid fa-masks-theater"></i></div>
+                            <h4>Auditorium & Halls</h4>
+                            <p>Banquet Halls, Theater</p>
+                        </div>
+                        <div class="booking-option-card" data-category="leisure">
+                            <div class="option-icon"><i class="fa-solid fa-book-open"></i></div>
+                            <h4>Leisure & Youth</h4>
+                            <p>Library, Youth Lounge</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer-actions">
+                        <button class="btn btn-solid btn-next w-full text-center" id="btn-goto-step2" disabled style="justify-content: center; align-items: center; display: flex; gap: 8px;">Continue <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Date & Time -->
+                <div class="booking-step" id="booking-step-2">
+                    <h3>Select Date & Session Time</h3>
+                    <div class="booking-datetime-wrapper">
+                        <div class="date-picker-group">
+                            <label for="booking-date">Choose Date</label>
+                            <input type="date" id="booking-date" class="form-input">
+                        </div>
+                        <div class="time-picker-group">
+                            <label>Preferred Time Slot</label>
+                            <div class="time-slots-grid">
+                                <button type="button" class="time-slot-btn" data-time="10:00 AM">10:00 AM</button>
+                                <button type="button" class="time-slot-btn" data-time="12:00 PM">12:00 PM</button>
+                                <button type="button" class="time-slot-btn" data-time="02:00 PM">02:00 PM</button>
+                                <button type="button" class="time-slot-btn" data-time="04:00 PM">04:00 PM</button>
+                                <button type="button" class="time-slot-btn" data-time="06:00 PM">06:00 PM</button>
+                                <button type="button" class="time-slot-btn" data-time="08:00 PM">08:00 PM</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer-actions">
+                        <button class="btn btn-outline btn-back" id="btn-back-step1" style="justify-content: center; align-items: center; display: flex; gap: 8px;"><i class="fa-solid fa-chevron-left"></i> Back</button>
+                        <button class="btn btn-solid btn-next" id="btn-goto-step3" disabled style="justify-content: center; align-items: center; display: flex; gap: 8px;">Continue <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Contact & Submit -->
+                <div class="booking-step" id="booking-step-3">
+                    <h3>Confirm Booking Details</h3>
+                    <form id="booking-form" class="booking-modal-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="booking-name" class="form-input" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-email">Email <span class="required">*</span></label>
+                                <input type="email" id="booking-email" class="form-input" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-phone">Phone Number <span class="required">*</span></label>
+                                <input type="tel" id="booking-phone" class="form-input" placeholder="+971 50 123 4567" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-notes">Special Requests</label>
+                                <input type="text" id="booking-notes" class="form-input" placeholder="e.g. rackets rental, diet requirements">
+                            </div>
+                        </div>
+                        <div class="booking-summary-box">
+                            <p><strong>Category:</strong> <span id="summary-category">-</span></p>
+                            <p><strong>Schedule:</strong> <span id="summary-datetime">-</span></p>
+                        </div>
+                        <div class="modal-footer-actions">
+                            <button type="button" class="btn btn-outline btn-back" id="btn-back-step2" style="justify-content: center; align-items: center; display: flex; gap: 8px;"><i class="fa-solid fa-chevron-left"></i> Back</button>
+                            <button type="submit" class="btn btn-solid btn-next" style="justify-content: center; align-items: center; display: flex; gap: 8px;">Reserve Now <i class="fa-solid fa-circle-check"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 4: Success Ticket -->
+                <div class="booking-step" id="booking-step-success">
+                    <div class="success-ticket-container">
+                        <div class="ticket-header">
+                            <div class="success-icon-wrapper pulse-animation">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+                            <h3>Reservation Confirmed!</h3>
+                            <p>Your ticket is active. Present this details at the reception.</p>
+                        </div>
+                        <div class="ticket-body">
+                            <div class="ticket-info-row">
+                                <div>
+                                    <span class="label">MEMBER REQ</span>
+                                    <span class="value" id="ticket-name">John Doe</span>
+                                </div>
+                                <div>
+                                    <span class="label">TICKET ID</span>
+                                    <span class="value" id="ticket-id">ISC-892437</span>
+                                </div>
+                            </div>
+                            <div class="ticket-info-row">
+                                <div>
+                                    <span class="label">FACILITY</span>
+                                    <span class="value" id="ticket-category">Sports & Fitness</span>
+                                </div>
+                                <div>
+                                    <span class="label">TIMING</span>
+                                    <span class="value" id="ticket-datetime">12 Oct 2026, 04:00 PM</span>
+                                </div>
+                            </div>
+                            <div class="ticket-barcode">
+                                <div class="barcode-line" style="width: 2px;"></div>
+                                <div class="barcode-line" style="width: 4px;"></div>
+                                <div class="barcode-line" style="width: 1px;"></div>
+                                <div class="barcode-line" style="width: 3px;"></div>
+                                <div class="barcode-line" style="width: 5px;"></div>
+                                <div class="barcode-line" style="width: 2px;"></div>
+                                <div class="barcode-line" style="width: 1px;"></div>
+                                <div class="barcode-line" style="width: 4px;"></div>
+                                <div class="barcode-line" style="width: 3px;"></div>
+                                <div class="barcode-line" style="width: 2px;"></div>
+                                <div class="barcode-line" style="width: 6px;"></div>
+                                <div class="barcode-line" style="width: 1px;"></div>
+                                <div class="barcode-line" style="width: 3px;"></div>
+                                <div class="barcode-line" style="width: 4px;"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-solid btn-lg mt-4 w-full" id="btn-close-success">Done</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Success Modal -->
+    <div class="booking-modal-overlay" id="contact-success-modal">
+        <div class="booking-modal-card success-card">
+            <!-- Close Button -->
+            <button class="booking-modal-close" id="close-success-modal" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="success-ticket-container">
+                <div class="success-icon-wrapper pulse-animation">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3>Message Sent Successfully!</h3>
+                <p>Thank you for reaching out. A relations representative from the India Social & Cultural Centre will contact you within 24 hours.</p>
+                <button class="btn btn-solid btn-lg mt-4 w-full" id="btn-close-contact-success">Back to Website</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
