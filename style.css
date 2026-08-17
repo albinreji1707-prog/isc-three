@@ -1012,6 +1012,10 @@ ul {
     margin-bottom: 24px;
 }
 
+.facility-mobile-toggle {
+    display: none; /* Invisible by default on desktop viewports */
+}
+
 .facility-header-row h3 {
     font-family: var(--font-headings);
     font-size: 1.35rem;
@@ -1977,26 +1981,65 @@ ul {
         height: 380px !important;
     }
 
+    /* On mobile, let the drawer stay absolute so it can slide up/down on toggle */
     .facility-glass-content {
-        position: relative !important;
-        transform: none !important; /* Always open/expanded on mobile for readability */
-        background-color: rgba(255, 255, 255, 0.88) !important;
+        position: absolute !important;
+        transform: translateY(calc(100% - 68px)) !important; /* Collapsed state showing only header row */
         border-radius: 0 0 24px 24px !important;
         height: auto !important;
         padding: 20px !important;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.5s ease !important;
+    }
+
+    /* Active state when toggled via mobile button */
+    .facility-glass-content.active {
+        transform: translateY(0) !important;
+        background-color: rgba(255, 255, 255, 0.95) !important;
     }
 
     .facility-expanded-body {
+        opacity: 0 !important;
+        transform: translateY(15px) !important;
+        transition: opacity 0.4s ease, transform 0.4s ease !important;
+    }
+
+    .facility-glass-content.active .facility-expanded-body {
         opacity: 1 !important;
-        transform: none !important;
+        transform: translateY(0) !important;
     }
 
     .facility-header-row {
-        margin-bottom: 12px !important;
+        margin-bottom: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        height: 28px !important;
     }
 
-    .card-arrow {
-        display: none !important; /* Hide arrow on mobile viewports */
+    .facility-glass-content.active .facility-header-row {
+        margin-bottom: 16px !important;
+    }
+
+    /* Show the round toggle button only on mobile */
+    .facility-mobile-toggle {
+        display: flex !important;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: rgba(15, 23, 42, 0.06);
+        border: none;
+        align-items: center;
+        justify-content: center;
+        color: var(--slate-800);
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .facility-glass-content.active .facility-mobile-toggle {
+        transform: rotate(180deg);
+        background-color: var(--isc-red);
+        color: var(--isc-white);
     }
 
     .membership-grid {

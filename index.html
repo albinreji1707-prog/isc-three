@@ -275,6 +275,9 @@
                         <div class="facility-glass-content">
                             <div class="facility-header-row">
                                 <h3>Sports & Recreation</h3>
+                                <button class="facility-mobile-toggle" aria-label="Toggle details">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
                             </div>
                             <div class="facility-expanded-body">
                                 <p>Equipped with 5 professional indoor badminton courts, international-standard squash courts, a high-tech gym, and table tennis rooms.</p>
@@ -295,6 +298,9 @@
                         <div class="facility-glass-content">
                             <div class="facility-header-row">
                                 <h3>Exquisite Dining</h3>
+                                <button class="facility-mobile-toggle" aria-label="Toggle details">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
                             </div>
                             <div class="facility-expanded-body">
                                 <p>Featuring a multi-cuisine family restaurant, a cozy sports lounge, and rich catering facilities offering traditional Indian and international delicacies.</p>
@@ -315,6 +321,9 @@
                         <div class="facility-glass-content">
                             <div class="facility-header-row">
                                 <h3>Event Venues & Halls</h3>
+                                <button class="facility-mobile-toggle" aria-label="Toggle details">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
                             </div>
                             <div class="facility-expanded-body">
                                 <p>A grand main auditorium with seating for over 800 guests, equipped with high-end audio-visual systems, alongside premium mini-conference halls.</p>
@@ -335,6 +344,9 @@
                         <div class="facility-glass-content">
                             <div class="facility-header-row">
                                 <h3>Literary & Leisure Hub</h3>
+                                <button class="facility-mobile-toggle" aria-label="Toggle details">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
                             </div>
                             <div class="facility-expanded-body">
                                 <p>Discover our peaceful library boasting over 10,000 books, child-friendly youth activity spaces, and card/billiards recreation rooms.</p>
@@ -893,6 +905,18 @@
             }, { passive: true });
 
             startAutoscroll();
+
+            // Mobile bento cards drawer toggle logic
+            const mobileToggleBtns = document.querySelectorAll('.facility-mobile-toggle');
+            mobileToggleBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const glassContent = btn.closest('.facility-glass-content');
+                    if (glassContent) {
+                        glassContent.classList.toggle('active');
+                    }
+                });
+            });
 
         });
     </script>
