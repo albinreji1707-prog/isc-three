@@ -283,7 +283,6 @@
                                     <li><i class="fa-solid fa-circle-check"></i> Squash & Table Tennis Arenas</li>
                                     <li><i class="fa-solid fa-circle-check"></i> Certified Coaches & Trainers</li>
                                 </ul>
-                                <a href="#contact" class="btn btn-solid btn-sm mt-3 w-full text-center">Book Sports Facility</a>
                             </div>
                         </div>
                     </div>
@@ -304,7 +303,6 @@
                                     <li><i class="fa-solid fa-circle-check"></i> VIP Dining & Sports Lounge</li>
                                     <li><i class="fa-solid fa-circle-check"></i> Party Catering & Outdoor Buffets</li>
                                 </ul>
-                                <a href="#contact" class="btn btn-solid btn-sm mt-3 w-full text-center">Reserve Table</a>
                             </div>
                         </div>
                     </div>
@@ -325,7 +323,6 @@
                                     <li><i class="fa-solid fa-circle-check"></i> Multi-purpose Banquet Halls</li>
                                     <li><i class="fa-solid fa-circle-check"></i> High-Tech Sound & Projection Systems</li>
                                 </ul>
-                                <a href="#contact" class="btn btn-solid btn-sm mt-3 w-full text-center">Inquire For Booking</a>
                             </div>
                         </div>
                     </div>
@@ -346,7 +343,6 @@
                                     <li><i class="fa-solid fa-circle-check" style="color: var(--isc-red);"></i> Youth Recreation & Activity Room</li>
                                     <li><i class="fa-solid fa-circle-check" style="color: var(--isc-red);"></i> Cards, Chess, & Billiards Lounge</li>
                                 </ul>
-                                <a href="#contact" class="btn btn-gold-solid btn-sm mt-3 w-full text-center">Explore Leisure Area</a>
                             </div>
                         </div>
                     </div>
@@ -755,18 +751,19 @@
                 link.addEventListener('click', closeDrawer);
             });
 
-            // Inquiry Form Submission animation (Triggers Premium Success Modal)
+            // Inquiry Form Submission animation
             const inquiryForm = document.getElementById('inquiry-form');
-            const contactSuccessModal = document.getElementById('contact-success-modal');
+            const successMsg = document.getElementById('form-success-msg');
 
             if (inquiryForm) {
                 inquiryForm.addEventListener('submit', function (e) {
                     e.preventDefault();
 
+                    // Simple validation check
                     if (inquiryForm.checkValidity()) {
-                        // Open success modal and reset form
-                        contactSuccessModal.classList.add('active');
-                        document.body.style.overflow = 'hidden'; // Lock scrolling
+                        // Smoothly hide form and display success message
+                        inquiryForm.style.display = 'none';
+                        successMsg.classList.add('active');
                         inquiryForm.reset();
                     }
                 });
@@ -897,269 +894,6 @@
 
             startAutoscroll();
 
-            // ==========================================================================
-            // INTERACTIVE BOOKING MODAL & SUCCESS MODAL HANDLERS
-            // ==========================================================================
-            const bookingModal = document.getElementById('booking-modal');
-            const closeBookingModalBtn = document.getElementById('close-booking-modal');
-            const bookingSteps = document.querySelectorAll('.booking-step');
-            const stepDots = document.querySelectorAll('.step-dot');
-            const optionCards = document.querySelectorAll('.booking-option-card');
-            const timeSlotBtns = document.querySelectorAll('.time-slot-btn');
-            
-            // Buttons navigation
-            const btnGotoStep2 = document.getElementById('btn-goto-step2');
-            const btnGotoStep3 = document.getElementById('btn-goto-step3');
-            const btnBackStep1 = document.getElementById('btn-back-step1');
-            const btnBackStep2 = document.getElementById('btn-back-step2');
-            const btnCloseSuccess = document.getElementById('btn-close-success');
-            
-            // Booking state values
-            let selectedCategory = '';
-            let selectedDate = '';
-            let selectedTime = '';
-            
-            // Open modal function
-            function openBookingModal(preselectedCategory = '') {
-                bookingModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Disable page scrolling
-                
-                if (preselectedCategory) {
-                    selectedCategory = preselectedCategory;
-                    // Auto select the card in UI
-                    optionCards.forEach(card => {
-                        if (card.getAttribute('data-category') === preselectedCategory) {
-                            card.classList.add('selected');
-                        } else {
-                            card.classList.remove('selected');
-                        }
-                    });
-                    btnGotoStep2.removeAttribute('disabled');
-                    // Skip to step 2 for immediate booking selection
-                    goToStep(2);
-                } else {
-                    // Reset to Step 1
-                    goToStep(1);
-                    selectedCategory = '';
-                    optionCards.forEach(card => card.classList.remove('selected'));
-                    btnGotoStep2.setAttribute('disabled', 'true');
-                }
-            }
-            
-            // Close modal function
-            function closeBookingModal() {
-                bookingModal.classList.remove('active');
-                document.body.style.overflow = ''; // Re-enable page scrolling
-                resetBookingForm();
-            }
-            
-            // Switch steps
-            function goToStep(stepNum) {
-                // Hide all steps
-                bookingSteps.forEach(step => step.classList.remove('active'));
-                
-                // Show requested step
-                if (stepNum === 4 || stepNum === 'success') {
-                    document.getElementById('booking-step-success').classList.add('active');
-                } else {
-                    document.getElementById(`booking-step-${stepNum}`).classList.add('active');
-                }
-                
-                // Update indicator dots
-                stepDots.forEach(dot => {
-                    const dotStep = parseInt(dot.getAttribute('data-step'));
-                    if (dotStep <= stepNum) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Reset state
-            function resetBookingForm() {
-                selectedCategory = '';
-                selectedDate = '';
-                selectedTime = '';
-                document.getElementById('booking-date').value = '';
-                timeSlotBtns.forEach(btn => btn.classList.remove('selected'));
-                btnGotoStep2.setAttribute('disabled', 'true');
-                btnGotoStep3.setAttribute('disabled', 'true');
-                document.getElementById('booking-form').reset();
-            }
-            
-            // Attach event listeners to close trigger
-            closeBookingModalBtn.addEventListener('click', closeBookingModal);
-            bookingModal.addEventListener('click', (e) => {
-                if (e.target === bookingModal) closeBookingModal();
-            });
-            
-            // Step 1 Option Cards Event
-            optionCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    optionCards.forEach(c => c.classList.remove('selected'));
-                    card.classList.add('selected');
-                    selectedCategory = card.getAttribute('data-category');
-                    btnGotoStep2.removeAttribute('disabled');
-                });
-            });
-            
-            // Step 2 Inputs Event
-            const dateInput = document.getElementById('booking-date');
-            
-            // Set min date to today
-            const today = new Date().toISOString().split('T')[0];
-            dateInput.setAttribute('min', today);
-            
-            dateInput.addEventListener('change', (e) => {
-                selectedDate = e.target.value;
-                checkStep2Validity();
-            });
-            
-            timeSlotBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    timeSlotBtns.forEach(b => b.classList.remove('selected'));
-                    btn.classList.add('selected');
-                    selectedTime = btn.getAttribute('data-time');
-                    checkStep2Validity();
-                });
-            });
-            
-            function checkStep2Validity() {
-                if (selectedDate && selectedTime) {
-                    btnGotoStep3.removeAttribute('disabled');
-                } else {
-                    btnGotoStep3.setAttribute('disabled', 'true');
-                }
-            }
-            
-            // Step Navigation Events
-            btnGotoStep2.addEventListener('click', () => goToStep(2));
-            btnGotoStep3.addEventListener('click', () => {
-                // Update summary box
-                const categoryNames = {
-                    sports: 'Sports & Fitness Arena',
-                    dining: 'Exquisite Dining & VIP Lounge',
-                    hall: 'Event Venues & Auditoriums',
-                    leisure: 'Literary & Leisure Hub'
-                };
-                
-                document.getElementById('summary-category').innerText = categoryNames[selectedCategory] || selectedCategory;
-                
-                // Format Date
-                const dateObj = new Date(selectedDate);
-                const options = { day: 'numeric', month: 'short', year: 'numeric' };
-                const formattedDate = dateObj.toLocaleDateString('en-US', options);
-                
-                document.getElementById('summary-datetime').innerText = `${formattedDate} at ${selectedTime}`;
-                goToStep(3);
-            });
-            
-            btnBackStep1.addEventListener('click', () => goToStep(1));
-            btnBackStep2.addEventListener('click', () => goToStep(2));
-            btnCloseSuccess.addEventListener('click', closeBookingModal);
-            
-            // Step 3 Form Submit Event
-            const bookingForm = document.getElementById('booking-form');
-            bookingForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                const name = document.getElementById('booking-name').value;
-                const email = document.getElementById('booking-email').value;
-                const phone = document.getElementById('booking-phone').value;
-                
-                // Generate Ticket ID
-                const ticketId = 'ISC-' + Math.floor(100000 + Math.random() * 900000);
-                
-                // Update Success Ticket
-                document.getElementById('ticket-name').innerText = name;
-                document.getElementById('ticket-id').innerText = ticketId;
-                
-                const categoryNames = {
-                    sports: 'Sports & Fitness Arena',
-                    dining: 'Exquisite Dining & Lounge',
-                    hall: 'Auditorium & Banquet Hall',
-                    leisure: 'Literary & Leisure Hub'
-                };
-                document.getElementById('ticket-category').innerText = categoryNames[selectedCategory] || selectedCategory;
-                
-                const dateObj = new Date(selectedDate);
-                const options = { day: 'numeric', month: 'short', year: 'numeric' };
-                const formattedDate = dateObj.toLocaleDateString('en-US', options);
-                document.getElementById('ticket-datetime').innerText = `${formattedDate}, ${selectedTime}`;
-                
-                goToStep('success');
-            });
-            
-            // Bind triggers from headers and buttons
-            const facilityBookingLink = document.getElementById('btn-facility-booking');
-            if (facilityBookingLink) {
-                facilityBookingLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openBookingModal();
-                });
-            }
-            
-            // Mobile Drawer link trigger for booking
-            const drawerBookingLink = document.querySelector('.mobile-drawer a[href="#facilities"]');
-            if (drawerBookingLink) {
-                drawerBookingLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    closeDrawer();
-                    openBookingModal();
-                });
-            }
-            
-            // Bind facilities section category booking buttons
-            const facilitySportsBtn = document.querySelector('.card-sports .btn');
-            if (facilitySportsBtn) {
-                facilitySportsBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openBookingModal('sports');
-                });
-            }
-            
-            const facilityDiningBtn = document.querySelector('.card-dining .btn');
-            if (facilityDiningBtn) {
-                facilityDiningBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openBookingModal('dining');
-                });
-            }
-            
-            const facilityHallBtn = document.querySelector('.card-hall .btn');
-            if (facilityHallBtn) {
-                facilityHallBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openBookingModal('hall');
-                });
-            }
-            
-            const facilityLeisureBtn = document.querySelector('.card-leisure .btn');
-            if (facilityLeisureBtn) {
-                facilityLeisureBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openBookingModal('leisure');
-                });
-            }
-
-            // Contact Success Modal Handler
-            const closeSuccessModalBtn = document.getElementById('close-success-modal');
-            const closeContactSuccessBtn = document.getElementById('btn-close-contact-success');
-            
-            function closeContactSuccessModal() {
-                contactSuccessModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-            
-            if (closeSuccessModalBtn) closeSuccessModalBtn.addEventListener('click', closeContactSuccessModal);
-            if (closeContactSuccessBtn) closeContactSuccessBtn.addEventListener('click', closeContactSuccessModal);
-            if (contactSuccessModal) {
-                contactSuccessModal.addEventListener('click', (e) => {
-                    if (e.target === contactSuccessModal) closeContactSuccessModal();
-                });
-            }
-
         });
     </script>
 
@@ -1177,192 +911,7 @@
         </defs>
     </svg>
 
-    <!-- Interactive Facility Booking Modal -->
-    <div class="booking-modal-overlay" id="booking-modal">
-        <div class="booking-modal-card">
-            <!-- Close Button -->
-            <button class="booking-modal-close" id="close-booking-modal" aria-label="Close Booking Modal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
 
-            <!-- Modal Header -->
-            <div class="booking-modal-header">
-                <h2>Reserve Amenities</h2>
-                <p>Configure your session at ISC Abu Dhabi</p>
-                <div class="booking-steps-indicator">
-                    <span class="step-dot active" data-step="1">1</span>
-                    <span class="step-line"></span>
-                    <span class="step-dot" data-step="2">2</span>
-                    <span class="step-line"></span>
-                    <span class="step-dot" data-step="3">3</span>
-                </div>
-            </div>
-
-            <!-- Modal Body (Steps) -->
-            <div class="booking-modal-body">
-                <!-- Step 1: Select Facility -->
-                <div class="booking-step active" id="booking-step-1">
-                    <h3>Select Facility Category</h3>
-                    <div class="booking-options-grid">
-                        <div class="booking-option-card" data-category="sports">
-                            <div class="option-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
-                            <h4>Sports & Fitness</h4>
-                            <p>Badminton, Squash, Gym</p>
-                        </div>
-                        <div class="booking-option-card" data-category="dining">
-                            <div class="option-icon"><i class="fa-solid fa-utensils"></i></div>
-                            <h4>Exquisite Dining</h4>
-                            <p>Family Restaurant, Lounge</p>
-                        </div>
-                        <div class="booking-option-card" data-category="hall">
-                            <div class="option-icon"><i class="fa-solid fa-masks-theater"></i></div>
-                            <h4>Auditorium & Halls</h4>
-                            <p>Banquet Halls, Theater</p>
-                        </div>
-                        <div class="booking-option-card" data-category="leisure">
-                            <div class="option-icon"><i class="fa-solid fa-book-open"></i></div>
-                            <h4>Leisure & Youth</h4>
-                            <p>Library, Youth Lounge</p>
-                        </div>
-                    </div>
-                    <div class="modal-footer-actions">
-                        <button class="btn btn-solid btn-next w-full text-center" id="btn-goto-step2" disabled style="justify-content: center; align-items: center; display: flex; gap: 8px;">Continue <i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-
-                <!-- Step 2: Date & Time -->
-                <div class="booking-step" id="booking-step-2">
-                    <h3>Select Date & Session Time</h3>
-                    <div class="booking-datetime-wrapper">
-                        <div class="date-picker-group">
-                            <label for="booking-date">Choose Date</label>
-                            <input type="date" id="booking-date" class="form-input">
-                        </div>
-                        <div class="time-picker-group">
-                            <label>Preferred Time Slot</label>
-                            <div class="time-slots-grid">
-                                <button type="button" class="time-slot-btn" data-time="10:00 AM">10:00 AM</button>
-                                <button type="button" class="time-slot-btn" data-time="12:00 PM">12:00 PM</button>
-                                <button type="button" class="time-slot-btn" data-time="02:00 PM">02:00 PM</button>
-                                <button type="button" class="time-slot-btn" data-time="04:00 PM">04:00 PM</button>
-                                <button type="button" class="time-slot-btn" data-time="06:00 PM">06:00 PM</button>
-                                <button type="button" class="time-slot-btn" data-time="08:00 PM">08:00 PM</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer-actions">
-                        <button class="btn btn-outline btn-back" id="btn-back-step1" style="justify-content: center; align-items: center; display: flex; gap: 8px;"><i class="fa-solid fa-chevron-left"></i> Back</button>
-                        <button class="btn btn-solid btn-next" id="btn-goto-step3" disabled style="justify-content: center; align-items: center; display: flex; gap: 8px;">Continue <i class="fa-solid fa-chevron-right"></i></button>
-                    </div>
-                </div>
-
-                <!-- Step 3: Contact & Submit -->
-                <div class="booking-step" id="booking-step-3">
-                    <h3>Confirm Booking Details</h3>
-                    <form id="booking-form" class="booking-modal-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="booking-name">Full Name <span class="required">*</span></label>
-                                <input type="text" id="booking-name" class="form-input" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="booking-email">Email <span class="required">*</span></label>
-                                <input type="email" id="booking-email" class="form-input" placeholder="john@example.com" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="booking-phone">Phone Number <span class="required">*</span></label>
-                                <input type="tel" id="booking-phone" class="form-input" placeholder="+971 50 123 4567" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="booking-notes">Special Requests</label>
-                                <input type="text" id="booking-notes" class="form-input" placeholder="e.g. rackets rental, diet requirements">
-                            </div>
-                        </div>
-                        <div class="booking-summary-box">
-                            <p><strong>Category:</strong> <span id="summary-category">-</span></p>
-                            <p><strong>Schedule:</strong> <span id="summary-datetime">-</span></p>
-                        </div>
-                        <div class="modal-footer-actions">
-                            <button type="button" class="btn btn-outline btn-back" id="btn-back-step2" style="justify-content: center; align-items: center; display: flex; gap: 8px;"><i class="fa-solid fa-chevron-left"></i> Back</button>
-                            <button type="submit" class="btn btn-solid btn-next" style="justify-content: center; align-items: center; display: flex; gap: 8px;">Reserve Now <i class="fa-solid fa-circle-check"></i></button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Step 4: Success Ticket -->
-                <div class="booking-step" id="booking-step-success">
-                    <div class="success-ticket-container">
-                        <div class="ticket-header">
-                            <div class="success-icon-wrapper pulse-animation">
-                                <i class="fa-solid fa-circle-check"></i>
-                            </div>
-                            <h3>Reservation Confirmed!</h3>
-                            <p>Your ticket is active. Present this details at the reception.</p>
-                        </div>
-                        <div class="ticket-body">
-                            <div class="ticket-info-row">
-                                <div>
-                                    <span class="label">MEMBER REQ</span>
-                                    <span class="value" id="ticket-name">John Doe</span>
-                                </div>
-                                <div>
-                                    <span class="label">TICKET ID</span>
-                                    <span class="value" id="ticket-id">ISC-892437</span>
-                                </div>
-                            </div>
-                            <div class="ticket-info-row">
-                                <div>
-                                    <span class="label">FACILITY</span>
-                                    <span class="value" id="ticket-category">Sports & Fitness</span>
-                                </div>
-                                <div>
-                                    <span class="label">TIMING</span>
-                                    <span class="value" id="ticket-datetime">12 Oct 2026, 04:00 PM</span>
-                                </div>
-                            </div>
-                            <div class="ticket-barcode">
-                                <div class="barcode-line" style="width: 2px;"></div>
-                                <div class="barcode-line" style="width: 4px;"></div>
-                                <div class="barcode-line" style="width: 1px;"></div>
-                                <div class="barcode-line" style="width: 3px;"></div>
-                                <div class="barcode-line" style="width: 5px;"></div>
-                                <div class="barcode-line" style="width: 2px;"></div>
-                                <div class="barcode-line" style="width: 1px;"></div>
-                                <div class="barcode-line" style="width: 4px;"></div>
-                                <div class="barcode-line" style="width: 3px;"></div>
-                                <div class="barcode-line" style="width: 2px;"></div>
-                                <div class="barcode-line" style="width: 6px;"></div>
-                                <div class="barcode-line" style="width: 1px;"></div>
-                                <div class="barcode-line" style="width: 3px;"></div>
-                                <div class="barcode-line" style="width: 4px;"></div>
-                            </div>
-                        </div>
-                        <button class="btn btn-solid btn-lg mt-4 w-full" id="btn-close-success">Done</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Success Modal -->
-    <div class="booking-modal-overlay" id="contact-success-modal">
-        <div class="booking-modal-card success-card">
-            <!-- Close Button -->
-            <button class="booking-modal-close" id="close-success-modal" aria-label="Close Modal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div class="success-ticket-container">
-                <div class="success-icon-wrapper pulse-animation">
-                    <i class="fa-solid fa-circle-check"></i>
-                </div>
-                <h3>Message Sent Successfully!</h3>
-                <p>Thank you for reaching out. A relations representative from the India Social & Cultural Centre will contact you within 24 hours.</p>
-                <button class="btn btn-solid btn-lg mt-4 w-full" id="btn-close-contact-success">Back to Website</button>
-            </div>
-        </div>
-    </div>
 </body>
 
 </html>
